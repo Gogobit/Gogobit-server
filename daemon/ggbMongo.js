@@ -2,7 +2,9 @@
 
 const MongoClient = require('mongodb').MongoClient;
 
-const mongodbUrl = 'mongodb://gogobit:bitcoin3600@localhost:27017/gogobit';
+const GGBMONGO_USERNAME = process.env.GGBMONGO_USERNAME;
+const GGBMONGO_PASSWORD = process.env.GGBMONGO_PASSWORD;
+const mongodbUrl = `mongodb://${GGBMONGO_USERNAME}:${GGBMONGO_PASSWORD}@localhost:27017/gogobit`;
 
 module.exports = {
   connect: function connect(callback) {
